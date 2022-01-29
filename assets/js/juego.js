@@ -38,4 +38,16 @@ const pedirCarta = () => {
 
 pedirCarta();
 
+const valorCarta = ( carta ) => {
+    carta.pop();
+    const valor = carta;
+    console.log(valor);
+    console.log(isNaN(valor)||((valor==="A")?11:10));
+    console.log(!(isNaN(valor))||(valor*1));  
+    return valor;   
+}
+
+let valorr = valorCarta("AJ");
+console.log(valorr);
+
 
