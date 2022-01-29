@@ -15,8 +15,20 @@ const crearDeck = () => {
         }
     }
 }
+console.log("Carta sin barajear")
+crearDeck();//Cartas sin barajiar
+console.log(deck);
+console.log("C barajeada 1")
+deck = _.shuffle(deck);//Carta barajiadas
+console.log(deck);
 
-crearDeck();
-console.log(deck);
-deck = _.shuffle(deck);
-console.log(deck);
+const pedirCarta = () => {
+    let carta = deck.pop();
+    console.log("Carta cogida:" + carta);
+    console.log(deck);
+    console.log("C barajeada 2 sin una");
+    deck = _.shuffle(deck);
+    console.log(deck);
+
+}
+pedirCarta();
