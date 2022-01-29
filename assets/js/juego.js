@@ -23,12 +23,19 @@ deck = _.shuffle(deck);//Carta barajiadas
 console.log(deck);
 
 const pedirCarta = () => {
+    //Sirve para que si se cumple esta condicion ya para la funcion 
+    if (deck.length === 0) {
+        throw "No existen mas cartas";
+    }
+
     let carta = deck.pop();
     console.log("Carta cogida:" + carta);
     console.log(deck);
     console.log("C barajeada 2 sin una");
     deck = _.shuffle(deck);
     console.log(deck);
-
 }
+
 pedirCarta();
+
+
