@@ -39,12 +39,12 @@ const pedirCarta = () => {
 pedirCarta();
 */
 const valorCarta = ( carta ) => {
-    let valor = carta.slice(0,carta.length - 1);
-    (isNaN(valor))?((valor==="A")?valor=11:valor=10):valor*1;
+    const valor = carta.slice(0,carta.length - 1);
+    (isNaN(valor))?((valor==="A")?valor=11:valor=10):valor*2;
     return valor;  
 }
 
-let carta = valorCarta("AJ");
+const carta = valorCarta("AJ")+5;
 console.log(carta);
 
 
