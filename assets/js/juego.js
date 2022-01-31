@@ -39,13 +39,9 @@ const pedirCarta = () => {
 pedirCarta();
 */
 const valorCarta = ( carta ) => {
-    let letra = carta.pop();
-    console.log(letra);/*
-    const valor = carta;
-    console.log(valor);
-    console.log(isNaN(valor)||((valor==="A")?11:10));
-    console.log(!(isNaN(valor))||(valor*1));  
-    return valor;   */
+    let valor = carta.slice(0,carta.length - 1);
+    (isNaN(valor))?((valor==="A")?valor=11:valor=10):valor*1;
+    return valor;  
 }
 
 let carta = valorCarta("AJ");
