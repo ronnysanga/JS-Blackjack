@@ -40,11 +40,10 @@ pedirCarta();
 */
 const valorCarta = ( carta ) => {
     const valor = carta.slice(0,carta.length - 1);
-    (isNaN(valor))?((valor==="A")?valor=11:valor=10):valor*2;
-    return valor;  
+    return(isNaN(valor))?((valor==="A")?11:10):valor*1;  
 }
 
-const carta = valorCarta("AJ")+5;
+const carta = valorCarta("5J");
 console.log(carta);
 
 
