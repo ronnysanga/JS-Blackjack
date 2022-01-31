@@ -1,4 +1,4 @@
-
+/*
 let   deck       = [];
 const tipos      = ["C","D","H","S"];
 const especiales = ["A","J","Q","K"];
@@ -37,17 +37,18 @@ const pedirCarta = () => {
 }
 
 pedirCarta();
-
+*/
 const valorCarta = ( carta ) => {
-    carta.pop();
+    let letra = carta.pop();
+    console.log(letra);/*
     const valor = carta;
     console.log(valor);
     console.log(isNaN(valor)||((valor==="A")?11:10));
     console.log(!(isNaN(valor))||(valor*1));  
-    return valor;   
+    return valor;   */
 }
 
-let valorr = valorCarta("AJ");
-console.log(valorr);
+let carta = valorCarta("AJ");
+console.log(carta);
 
 
