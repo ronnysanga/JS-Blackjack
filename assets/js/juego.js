@@ -1,4 +1,4 @@
-/*
+
 let   deck       = [];
 const tipos      = ["C","D","H","S"];
 const especiales = ["A","J","Q","K"];
@@ -34,16 +34,16 @@ const pedirCarta = () => {
     console.log("C barajeada 2 sin una");
     deck = _.shuffle(deck);
     console.log(deck);
+    return carta;
 }
 
-pedirCarta();
-*/
 const valorCarta = ( carta ) => {
     const valor = carta.slice(0,carta.length - 1);
     return(isNaN(valor))?((valor==="A")?11:10):valor*1;  
 }
 
-const carta = valorCarta("5J");
-console.log(carta);
+const valor = valorCarta(pedirCarta());
+console.log(valor);
+
 
 
