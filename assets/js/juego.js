@@ -136,14 +136,14 @@ btnNuevo.addEventListener("click",()=>{
     deck = [];
     deck = crearDeck();
 
-    puntosJugador = 0;
+    puntosJugador     = 0;
     puntosComputadora = 0;
 
-    puntosHTML[0] = 0;
-    puntosHTML[1] = 0;
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
 
-    divCartasJugador    = "";
-    divCartasComputador = "";
+    divCartasComputador.innerText = "";
+    divCartasJugador.innerText    = "";
 
     btnPedir.disabled   = false;
     btnDetener.disabled = false;
