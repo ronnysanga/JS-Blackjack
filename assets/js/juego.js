@@ -1,4 +1,4 @@
-( ()=>{
+const miModulo = ( ()=>{
     "use strict"
 
     let   deck       = [];
@@ -29,12 +29,12 @@
         //deck = crearDeck();
         // puntosJugador     = 0;
         // puntosComputadora = 0;
-
-        puntosHTML[0].innerText = 0;
-        puntosHTML[1].innerText = 0;
-
-        divCartasComputador.innerText = "";
-        divCartasJugador.innerText    = "";
+        puntosHTML.forEach( elem => elem.innerText = 0);
+        // puntosHTML[0].innerText = 0;
+        // puntosHTML[1].innerText = 0;
+        divCartasJugadores.forEach( elem => elem.innerHTML = "");
+        // divCartasComputador.innerText = "";
+        // divCartasJugador.innerText    = "";
 
         btnPedir.disabled   = false;
         btnDetener.disabled = false;
@@ -174,15 +174,19 @@
     btnDetener.addEventListener("click",()=>{
         btnPedir.disabled   = true;
         btnDetener.disabled = true;
-        turnoComputadora( puntosJugador );
+        turnoComputadora( puntosJugadores[0] );
     });
 
     //bien
-    btnNuevo.addEventListener("click",()=>{
-        //console.clear();
-        inicializarJuego();
+    // btnNuevo.addEventListener("click",()=>{
+    //     //console.clear();
+    //     inicializarJuego();
 
-    });
+    // });
+
+    return {
+        nuevoJuego : inicializarJuego
+    };
 
 })();
 
