@@ -21,9 +21,23 @@
     //bien//Esta funcion inicializa el Juego
     const inicializarJuego = ( numJugadores = 2 )=>{
         deck = crearDeck();
+        puntosJugadores = [];
         for( let i = 0; i< numJugadores; i++ ){
             puntosJugadores.push(0);
         }
+        //deck = [];
+        //deck = crearDeck();
+        // puntosJugador     = 0;
+        // puntosComputadora = 0;
+
+        puntosHTML[0].innerText = 0;
+        puntosHTML[1].innerText = 0;
+
+        divCartasComputador.innerText = "";
+        divCartasJugador.innerText    = "";
+
+        btnPedir.disabled   = false;
+        btnDetener.disabled = false;
     }
     
     //bien//Funcion para agregar a la Lista deck las Cartas
@@ -83,6 +97,22 @@
 
     }
 
+    const determinarGanador= () => {
+
+        const [ puntosMinimos, puntosComputadora] = puntosJugadores;
+
+        setTimeout(() => {
+            if (puntosComputadora===puntosMinimos){
+                alert("Nadie gana:(");
+            }else if (puntosMinimos>21){
+                alert("Computadora gana")
+            }else if (puntosComputadora>21){
+                alert("Jugador Gana");
+            }else{
+                alert("Computador gana")
+            }        
+        }, 100); //despues de 100 milesimas de segundo
+    }
     //Bien
     const turnoComputadora = ( puntosMinimos) => {
         let puntosComputadora = 0;
@@ -99,25 +129,13 @@
             // imgCarta.classList.add("carta");
             // divCartasComputador.append(imgCarta);
 
-            if( puntosMinimos > 21 ){
-                break;
-            }
+            // if( puntosMinimos > 21 ){
+            //     break;
+            // }
 
         }while( (puntosComputadora<puntosMinimos) && (puntosMinimos<=21));
-
-
-        setTimeout(() => {
-            if (puntosComputadora===puntosMinimos){
-                alert("Nadie gana:(");
-            }else if (puntosMinimos>21){
-                alert("Computadora gana")
-            }else if (puntosComputadora>21){
-                alert("Jugador Gana");
-            }else{
-                alert("Computador gana")
-            }        
-        }, 100); //despues de 100 milesimas de segundo
-        
+     
+        determinarGanador();
     }
 
 
@@ -161,22 +179,8 @@
 
     //bien
     btnNuevo.addEventListener("click",()=>{
-        console.clear();
+        //console.clear();
         inicializarJuego();
-        // deck = [];
-        // deck = crearDeck();
-
-        // puntosJugador     = 0;
-        // puntosComputadora = 0;
-
-        // puntosHTML[0].innerText = 0;
-        // puntosHTML[1].innerText = 0;
-
-        // divCartasComputador.innerText = "";
-        // divCartasJugador.innerText    = "";
-
-        // btnPedir.disabled   = false;
-        // btnDetener.disabled = false;
 
     });
 
